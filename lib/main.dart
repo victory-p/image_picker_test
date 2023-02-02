@@ -77,9 +77,29 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         SizedBox(height: 200),
                         ElevatedButton(
-                          onPressed: () async {
-                            var picker = ImagePicker();
-                            var image = await picker.pickImage(source: ImageSource.camera);
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  SimpleDialog(
+                                    children: <Widget>[
+                                      SimpleDialogOption(
+                                        child: Text('갤러리에서 사진 가져오기'),
+                                        onPressed: () async {
+                                          var picker = ImagePicker();
+                                          var image = await picker.pickImage(source: ImageSource.gallery);
+                                        },
+                                      ),
+                                      SimpleDialogOption(
+                                        child: Text('카메라로 사진 촬영하기'),
+                                        onPressed: () async {
+                                          var picker = ImagePicker();
+                                          var image = await picker.pickImage(source: ImageSource.camera);
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                            );
                           },
                           child: Icon(Icons.add_a_photo, size: 60, color: Colors.grey[600]),
                           style: TextButton.styleFrom(
@@ -97,9 +117,29 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         SizedBox(height: 200),
                         ElevatedButton(
-                          onPressed: () async {
-                            var picker = ImagePicker();
-                            var image = await picker.pickImage(source: ImageSource.gallery);
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  SimpleDialog(
+                                    children: <Widget>[
+                                      SimpleDialogOption(
+                                        child: Text('갤러리에서 사진 가져오기'),
+                                        onPressed: () async {
+                                          var picker = ImagePicker();
+                                          var image = await picker.pickImage(source: ImageSource.gallery);
+                                        },
+                                      ),
+                                      SimpleDialogOption(
+                                        child: Text('카메라로 사진 촬영하기'),
+                                        onPressed: () async {
+                                          var picker = ImagePicker();
+                                          var image = await picker.pickImage(source: ImageSource.camera);
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                            );
                           },
                           child: Icon(Icons.add_a_photo, size: 60, color: Colors.grey[600]),
                           style: TextButton.styleFrom(
