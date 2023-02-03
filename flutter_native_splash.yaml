@@ -1,0 +1,13 @@
+flutter_native_splash:
+    color: "#BCCF9B"
+    image: assets/onthewheel.png
+    color_dark: "#121212"
+    image_dark: assets/free-icon-wheel-838735.png
+
+    android_12:
+      image: assets/onthewheel.png
+      icon_background_color: "#ffffff"
+      image_dark: assets/free-icon-wheel-838735.png
+      icon_background_color_dark: "#121212"
+
+    web: false
